@@ -36,6 +36,8 @@ class AlarmAddEditViewController: UIViewController, UITableViewDelegate, UITable
         super.didReceiveMemoryWarning()
     }
     
+    // SQLiteとかに保存した方がよい
+    // https://github.com/stephencelis/SQLite.swift
     @IBAction func saveEditAlarm(_ sender: AnyObject) {
         let date = Scheduler.correctSecondComponent(date: datePicker.date)
         let index = segueInfo.curCellIndex
@@ -55,6 +57,9 @@ class AlarmAddEditViewController: UIViewController, UITableViewDelegate, UITable
         else {
             alarmModel.alarms.append(tempAlarm)
         }
+        
+        // 画面遷移
+        // https://qiita.com/treastrain/items/8c298886cc8f3cf124f2
         self.performSegue(withIdentifier: Id.saveSegueIdentifier, sender: self)
     }
     
@@ -71,7 +76,7 @@ class AlarmAddEditViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 4
+            return 3
         }
         else {
             return 1
@@ -94,16 +99,11 @@ class AlarmAddEditViewController: UIViewController, UITableViewDelegate, UITable
                 cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
             }
             else if indexPath.row == 1 {
-                cell!.textLabel!.text = "Label"
-                cell!.detailTextLabel!.text = segueInfo.label
-                cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-            }
-            else if indexPath.row == 2 {
                 cell!.textLabel!.text = "Sound"
                 cell!.detailTextLabel!.text = segueInfo.mediaLabel
                 cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
             }
-            else if indexPath.row == 3 {
+            else if indexPath.row == 2 {
                
                 cell!.textLabel!.text = "Snooze"
                 let sw = UISwitch(frame: CGRect())
@@ -137,10 +137,6 @@ class AlarmAddEditViewController: UIViewController, UITableViewDelegate, UITable
                 cell?.setSelected(true, animated: false)
                 cell?.setSelected(false, animated: false)
             case 1:
-                performSegue(withIdentifier: Id.labelSegueIdentifier, sender: self)
-                cell?.setSelected(true, animated: false)
-                cell?.setSelected(false, animated: false)
-            case 2:
                 performSegue(withIdentifier: Id.soundSegueIdentifier, sender: self)
                 cell?.setSelected(true, animated: false)
                 cell?.setSelected(false, animated: false)
@@ -210,6 +206,4 @@ class AlarmAddEditViewController: UIViewController, UITableViewDelegate, UITable
         segueInfo.mediaLabel = src.mediaLabel
         segueInfo.mediaID = src.mediaID
     }
-    
-    
 }

@@ -145,7 +145,6 @@
                         <outlet property="tableView" destination="Sig-gf-rWO" id="0Tj-Xh-2qs"/>
                         <segue destination="c81-oW-ugr" kind="unwind" identifier="saveEditSegue" unwindAction="unwindFromAddEditAlarmView:" id="H3X-Pk-MH9"/>
                         <segue destination="MmK-Sj-jZ1" kind="show" identifier="weekdaysSegue" id="P0y-9x-cTb"/>
-                        <segue destination="Eno-9x-e90" kind="show" identifier="labelEditSegue" id="adI-dQ-7Cn"/>
                         <segue destination="QpM-GR-Mpm" kind="show" identifier="soundSegue" id="OqL-Y8-9Q4"/>
                     </connections>
                 </viewController>
@@ -333,45 +332,6 @@
                 <exit id="bPw-LI-F89" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4215" y="454"/>
-        </scene>
-        <!--Label-->
-        <scene sceneID="ck0-2C-80R">
-            <objects>
-                <viewController id="Eno-9x-e90" customClass="LabelEditViewController" customModule="Alarm_ios_swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1cM-HH-WjN"/>
-                        <viewControllerLayoutGuide type="bottom" id="msd-Ue-IZj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="m9o-6m-IR4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JsK-02-iVy">
-                                <rect key="frame" x="-16" y="228" width="405" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="J98-Fk-JXt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="JsK-02-iVy" firstAttribute="leading" secondItem="m9o-6m-IR4" secondAttribute="leading" id="EBL-Te-Ogp"/>
-                            <constraint firstItem="JsK-02-iVy" firstAttribute="top" secondItem="1cM-HH-WjN" secondAttribute="bottom" constant="164" id="HnK-C1-BER"/>
-                            <constraint firstAttribute="trailing" secondItem="JsK-02-iVy" secondAttribute="trailing" id="yua-7D-2Le"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Label" id="89R-sU-zXe"/>
-                    <connections>
-                        <outlet property="labelTextField" destination="JsK-02-iVy" id="gkw-Mr-E82"/>
-                        <segue destination="6ml-qM-XmG" kind="unwind" identifier="labelUnwindSegue" unwindAction="unwindFromLabelEditView:" id="kvQ-l8-hdR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bc1-0f-IHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="6ml-qM-XmG" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="4181.6000000000004" y="-305.39730134932535"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="53u-li-aZw">

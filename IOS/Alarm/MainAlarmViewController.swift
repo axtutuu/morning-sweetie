@@ -155,7 +155,7 @@ class MainAlarmViewController: UITableViewController{
         }
         else if segue.identifier == Id.editSegueIdentifier {
             addEditController.navigationItem.title = "Edit Alarm"
-            addEditController.segueInfo = sender as! SegueInfo
+            addEditController.segueInfo = sender as? SegueInfo
         }
     }
     
