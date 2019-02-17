@@ -116,6 +116,7 @@ class Scheduler : AlarmSchedulerDelegate
         return d
     }
     
+    // Note: 予約して音声を鳴らす
     internal func setNotificationWithDate(_ date: Date, onWeekdaysForNotify weekdays:[Int], snoozeEnabled:Bool,  onSnooze: Bool, soundName: String, index: Int) {
         let AlarmNotification: UILocalNotification = UILocalNotification()
         AlarmNotification.alertBody = "Wake Up!"
